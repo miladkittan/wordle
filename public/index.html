@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Loop's Wordle</title>
+</head>
+<body>
+    <img width="15%" src="https://static.wixstatic.com/media/91df06_00c23b85655c4a439cfc48c1cfb97909~mv2.png/v1/crop/x_236,y_96,w_902,h_436/fill/w_320,h_152,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/BLUE-Logo%20copy.png" alt="">
+    <h1>Loop's Wordle</h1>
+    <div id="words"></div>
+    <div id="keyboard-cont">
+      <div class="first-row">
+          <button class="keyboard-button" id="q" value="q">q</button>
+          <button class="keyboard-button" id="w" value="w">w</button>
+          <button class="keyboard-button" id="e" value="e">e</button>
+          <button class="keyboard-button" id="r" value="r">r</button>
+          <button class="keyboard-button" id="t" value="t">t</button>
+          <button class="keyboard-button" id="y" value="y">y</button>
+          <button class="keyboard-button" id="u" value="u">u</button>
+          <button class="keyboard-button" id="i" value="i">i</button>
+          <button class="keyboard-button" id="o" value="o">o</button>
+          <button class="keyboard-button" id="p" value="p">p</button>
+      </div>
+      <div class="second-row">
+          <button class="keyboard-button" id="a" value="a">a</button>
+          <button class="keyboard-button" id="s" value="s">s</button>
+          <button class="keyboard-button" id="d" value="d">d</button>
+          <button class="keyboard-button" id="f" value="f">f</button>
+          <button class="keyboard-button" id="g" value="g">g</button>
+          <button class="keyboard-button" id="h" value="h">h</button>
+          <button class="keyboard-button" id="j" value="j">j</button>
+          <button class="keyboard-button" id="k" value="k">k</button>
+          <button class="keyboard-button" id="l" value="l">l</button>
+      </div>
+      <div class="third-row">
+          <button class="keyboard-button" value="Enter">Enter</button>
+          <button class="keyboard-button" id="z" value="z">z</button>
+          <button class="keyboard-button" id="x" value="x">x</button>
+          <button class="keyboard-button" id="c" value="c">c</button>
+          <button class="keyboard-button" id="v" value="v">v</button>
+          <button class="keyboard-button" id="b" value="b">b</button>
+          <button class="keyboard-button" id="n" value="n">n</button>
+          <button class="keyboard-button" id="m" value="m">m</button>
+          <button class="keyboard-button" onclick="clearButton()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path fill="white" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path></svg>
+          </button>
+      </div>
+      <footer>
+        <p>Made with 💙 by Loop Community.</p>
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  
+</body>
+</html>
