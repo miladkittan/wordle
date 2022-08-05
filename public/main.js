@@ -121,32 +121,49 @@ async function colorize(results) {
 	for (let i = 0; i < results.length; i++) {
 		if (results[i] == 1) {
 			number_of_greens++;
-			wordDiv[i].style.backgroundColor = '#538d4e';
+			wordDiv[i].style.backgroundColor = 'rgb(121, 168, 107)';
+			wordDiv[i].style.color = 'rgb(255, 255, 255)';
 		} else if (results[i] == 0) {
-			wordDiv[i].style.backgroundColor = '#b59f3b';
+			wordDiv[i].style.backgroundColor = 'rgb(197, 181, 102)';
+			wordDiv[i].style.color = 'rgb(255, 255, 255)';
 		} else {
-			wordDiv[i].style.backgroundColor = '#3a3a3c';
+			wordDiv[i].style.backgroundColor = 'rgb(121, 124, 126)';
+			wordDiv[i].style.color = 'rgb(255, 255, 255)';
 		}
 		await animateCSS(wordDiv[i], 'flipInX');
 	}
 	if (number_of_greens == NUMBER_OF_CHARS) {
-		alert('You won !!');
+		var modal = document.getElementById("myModal");
+		var span = document.getElementsByClassName("close")[0];
+		modal.style.display = "block";
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+		window.onclick = function(event) {
+			if (event.target == modal) {
+			  modal.style.display = "none";
+			}
+		}
 	}
 }
 
 function colorizeKeyboard(results, currentGuess) {
-	const green = 'rgb(83, 141, 78)';
-	const yellow = 'rgb(181, 159, 59)';
-	const gray = 'rgb(58, 58, 60)';
+	const green = 'rgb(121, 168, 107)';
+	const yellow = 'rgb(197, 181, 102)';
+	const gray = 'rgb(121, 124, 126)';
+	const white = 'rgb(255, 255, 255)';
 	for (let i = 0; i < results.length; i++) {
 		const currentKey = document.getElementById(currentGuess[i]);
 		const keyBackground = window.getComputedStyle(currentKey).backgroundColor;
 		if (results[i] == 1) {
 			currentKey.style.backgroundColor = green;
+			currentKey.style.color = white;
 		} else if (results[i] == 0 && keyBackground != green) {
 			currentKey.style.backgroundColor = yellow;
+			currentKey.style.color = white;
 		} else if (keyBackground != green && keyBackground != yellow) {
 			currentKey.style.backgroundColor = gray;
+			currentKey.style.color = white;
 		}
 	}
 }
@@ -170,3 +187,23 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
 
     node.addEventListener('animationend', handleAnimationEnd, {once: true});
 });
+
+$(document).ready(function() {
+    $(".btn-dark").click(function() {
+        if($("body").hasClass("light-mode")) {
+            $("body").addClass("dark-mode").removeClass("light-mode");
+            $("table").addClass("table-dark").removeClass("table-light");
+            $(".form-label").addClass("text-light").removeClass("text-dark");
+            $(".btn-dark").html("Light Mode");
+            $(".btn-dark").addClass("btn-light").removeClass("btn-dark");
+        }
+
+        else if($("body").hasClass("dark-mode")) {
+            $("body").addClass("light-mode").removeClass("dark-mode");
+            $("table").addClass("table-light").removeClass("table-dark");
+            $(".form-label").addClass("text-dark").removeClass("text-light");
+            $(".btn-light").html("Dark Mode");
+            $(".btn-light").addClass("btn-dark").removeClass("btn-light");
+        }
+    })
+})
