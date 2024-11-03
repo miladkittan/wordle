@@ -1,0 +1,18 @@
+body {
+    background-color: grey;
+    text-align: center;
+}
+
+.game {
+    width: 100%;
+}
+
+.word {
+    justify-content: center;
+    display: flex;
+}
+
+.char {
+    height: 100px;
+    width: 100px;
+}
